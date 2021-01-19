@@ -1,0 +1,144 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/variables";
+
+@font-face {
+    font-family: roboto;
+    src: url(assets/fonts/KFOmCnqEu92Fr1Mu4mxK.woff2) format("opentype");
+}
+
+body{
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-primary{
+    background-color: $primary;
+}
+
+.primary{
+    color: $primary;
+}
+
+.bg-secondary{
+    background-color: $secondary;
+}
+
+.secondary{
+    color: $secondary;
+}
+
+.white{
+    color: $white;
+}
+
+.bg-white{
+    background-color: $white;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding: 1rem 2rem;
+    max-width: 1024px;
+    justify-content: space-between;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.position-relative{
+    position: relative;
+}
+
+.position-absolute{
+    position: absolute;
+}
+
+.d-block{
+    display: block;
+}
+
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.mt-1{
+    margin-top: 1rem;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mr-auto{
+    margin-right: auto;
+}
+
+.ml-auto{
+    margin-left: auto;
+}
+
+.user-container{
+    justify-content: space-between;
+    display:flex;
+}
+
+@media screen and (max-width: 992px) {
+  .title {   
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .user-container {   
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.float-right{
+    float: right;
+}
+
+.circle-icon {
+    background: $secondary;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 7px;
+}
+
+.stars{
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}

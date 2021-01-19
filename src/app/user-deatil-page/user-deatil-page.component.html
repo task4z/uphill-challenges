@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="w-100">
+        <img [src]="userDetail?.avatar_url" alt="Avatar" class="circle d-flex mx-auto mt-1">
+    </div>
+    <div class="t-row mt-1">
+        <div class="d-flex">
+            <span class="mx-auto">Username: <strong>{{login}}</strong></span>
+        </div>
+    </div>
+    <div class="t-row mt-1">
+        <div class="d-flex">
+            <span class="mx-auto">Id: {{userDetail?.id}}</span>
+        </div>
+    </div>
+    <div class="t-row mt-1">
+        <div class="d-flex h-1">
+            <i class="far fa-user fa-lg ml-auto"></i> 
+            <span class="mr-auto ellipsis" [title]="userDetail?.followers+' Followers'"><strong>{{userDetail?.followers ? ' '+userDetail.followers : ' 0' }}</strong> Followers</span>
+        </div>
+    </div>
+    <div class="t-row mt-3" *ngIf="repositoryUser?.length">
+        <div class="d-flex">
+            <strong class="mx-auto">{{login}} most starred repositories</strong>
+        </div>
+    </div>
+    <div class="t-row mt-3" *ngIf="!repositoryUser?.length">
+        <div class="d-flex">
+            <strong class="mx-auto">The User {{login}} does not have repositories</strong>
+        </div>
+    </div>
+    <div class="w-100 mt-1">
+        <div class="user-container">
+            <div class="d-flex mx-auto" *ngFor="let repository of repositoryUser; index as i">
+                <app-repository-card [repository]="repository" [index]="i"></app-repository-card>
+            </div>
+        </div>
+    </div>
+</div>

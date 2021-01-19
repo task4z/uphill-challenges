@@ -1,0 +1,25 @@
+@import "../../assets/variables";
+
+.container{
+  flex-wrap: wrap;
+  padding: unset;
+}
+
+.t-row{
+    height: 1em;
+    width: 100%;
+}
+
+.circle {
+    width: 7rem;
+    border-radius: 50%;
+    box-shadow: 2px 5px 10px $grey;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}

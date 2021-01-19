@@ -1,0 +1,14 @@
+<div class="card-repo" [style.border-top]="btColor">
+  <div class="row mt-1 mx-1">
+    <strong class="mx-auto ellipsis" [title]="repository.name">{{repository.name}}</strong>
+  </div>
+  <div class="row mt-1 mx-1">
+    <div class="stars mx-auto">
+      <i class="fa fa-star white circle-icon"></i>
+      <span class="ml-05 ellipsis" [title]="' '+repository.stargazers_count">{{' '+repository.stargazers_count}}</span>
+    </div>
+  </div>
+  <div class="row h-63 mt-1 mx-1">
+    <span [title]="repository.description" class="block-with-text">{{repository.description}}</span>
+  </div>
+</div>

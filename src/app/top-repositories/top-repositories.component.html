@@ -1,0 +1,10 @@
+<div class="mt-2">
+    <div class="title mb-1">
+        <strong>Top Repositories</strong>
+    </div>
+    <div class="user-container">
+        <div class="d-flex" *ngFor="let repository of repositories; index as i">
+          <app-repository-card [repository]="repository" [index]="i"></app-repository-card>
+        </div>
+    </div>
+</div>

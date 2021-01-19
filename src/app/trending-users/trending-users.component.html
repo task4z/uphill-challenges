@@ -1,0 +1,10 @@
+<div class="mt-2">
+  <div class="title">
+    <strong>Trending Users</strong>
+  </div>
+  <div class="user-container">
+    <div class="d-flex" *ngFor="let user of trendResponse">
+      <app-user-card [user]="user"></app-user-card>
+    </div>
+  </div>
+</div>

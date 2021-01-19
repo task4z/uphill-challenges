@@ -1,0 +1,10 @@
+<div class="mt-2">
+    <div class="title">
+        <strong>Most Active Users</strong>
+    </div>
+    <div class="user-container">
+        <div class="d-flex" *ngFor="let user of activeResponse">
+          <app-user-card [user]="user"></app-user-card>
+        </div>
+    </div>
+</div>

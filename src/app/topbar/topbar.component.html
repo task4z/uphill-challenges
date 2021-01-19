@@ -1,0 +1,26 @@
+<div class="d-flex bg-primary">
+  <div class="container bg-primary">
+    <div class="d-flex pointer" (click)="goHome()">
+      <div class="d-flex">
+        <div class="d-flex">
+          <div class="rectangle bg-gradient"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="d-flex triangle">
+            <div class="rectangle bg-white"></div>
+            <div class="circle"></div>
+            <div class="rectangle-inverse bg-white"></div>
+            <div class="triangle-base bg-white"></div>
+        </div>
+      </div>
+      <strong class="white logo-title">UPHILL</strong>
+    </div>
+    <!-- The form -->
+    <form class="my-auto d-flex search-box">
+      <div class="position-relative w-100 d-flex">
+          <i class="fa fa-search position-absolute"></i>
+          <input class="search w-100" [formControl]="searchField" type="text" placeholder="Search">
+      </div>
+    </form> 
+  </div>   
+</div>
