@@ -12,12 +12,6 @@ import { SimpleUserDetail } from '../models/simple-user-detail.model';
 import { findLast } from '@angular/compiler/src/directive_resolver';
 
 const URL = 'https://api.github.com/';
-const HTTPOPTIONS = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'token d7271f5d9bca26108e73be9388c5763953846265 '
-  })
-};
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +32,7 @@ export class GitDataService {
   public getTrendingUsers(search?: string): Observable<SimpleUserItem[]> {
     search = search ? `${search}` : '';
     const query = `${URL}search/users?q=${search}${!search ? `created:${this.getPreviousMonth()}` : ''}&sort=followers&order=desc&per_page=3`;
-    return this.http.get<Response>(query, HTTPOPTIONS).pipe(
+    return this.http.get<Response>(query).pipe(
       map(response =>
         response.items.map(e =>({
           login:e.login,
@@ -50,7 +44,7 @@ export class GitDataService {
   public getActiveUsers(search?: string): Observable<SimpleUserItem[]>  {
     search = search ? `${search}` : '';
     const query = `${URL}search/users?q=${search}${!search ? `created:${this.getPreviousMonth()}` : ''}&sort=repositories&order=desc&per_page=3`;
-    return this.http.get<Response>(query, HTTPOPTIONS).pipe(
+    return this.http.get<Response>(query).pipe(
       map(response =>
         response.items.map(e => ({
           login: e.login,
@@ -62,7 +56,7 @@ export class GitDataService {
   public getTopRepositories(search?: string): Observable<SimpleRepositoryItem[]>{
     search = search ? `${search}`: '';
     const query = `${URL}search/repositories?q=${search}${!search ? `created:${this.getPreviousYear()}` : ''}&sort=stars&order=desc&per_page=4`;
-    return this.http.get<Repository>(query, HTTPOPTIONS).pipe(
+    return this.http.get<Repository>(query).pipe(
       map(response =>
         response.items
         .sort((a,b) => b.stargazers_count - a.stargazers_count)
@@ -76,7 +70,7 @@ export class GitDataService {
 
   public getRepositoriesFromUser(user: string): Observable<SimpleRepositoryItem[]>{
     const query = `${URL}users/${user}/repos?sort=stars&direction=desc&per_page=3`;
-    return this.http.get<RepositoryUser[]>(query, HTTPOPTIONS).pipe(
+    return this.http.get<RepositoryUser[]>(query).pipe(
       map(response =>
         response.map(e => ({
           name: e.name,
@@ -87,7 +81,7 @@ export class GitDataService {
   }
 
   public getUser(user: string): Observable<SimpleUserDetail>{
-    return this.http.get<User>(`${URL}users/${user}`, HTTPOPTIONS).pipe(
+    return this.http.get<User>(`${URL}users/${user}`).pipe(
       map(userData => ({
           name: userData.name,
           id: userData.id,
